@@ -1,0 +1,30 @@
+{"namespace": "org.librairy.service.modeler.facade.model",
+ "protocol": "ModelerService",
+
+ "types": [
+    {"name": "Word", "type": "record", "fields": [
+      {"name":"value","type":"string","default" : ""},
+      {"name":"score","type":"double","default" : 0.0}
+    ]},
+    {"name": "Topic", "type": "record", "fields": [
+      {"name":"id","type":"int", "default":-1},
+      {"name":"name","type":"string", "default":""},
+      {"name":"description","type":"string", "default":""}
+    ]}
+ ],
+
+ "messages": {
+     "inference": {
+       "request": [{"name": "text", "type": "string"}],
+       "response": {"type" : "array","items":"double"}
+     },
+     "topics":{
+       "request": [],
+       "response": {"type" : "array","items":"Topic"}
+     },
+     "words":{
+       "request": [{"name": "topicId", "type": "int"},{"name": "maxWords", "type": "int"}],
+       "response": {"type" : "array","items":"Word"}
+     }
+ }
+}
