@@ -29,4 +29,12 @@ public class WordsRequest {
     public Integer getTopicId() {
         return topicId;
     }
+
+    public void setMaxWords(Integer maxWords) {
+        this.maxWords = maxWords;
+    }
+
+    public void setTopicId(Integer topicId) {
+        this.topicId = topicId;
+    }
 }

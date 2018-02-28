@@ -10,15 +10,21 @@ import java.util.List;
  */
 public class TopicsResult {
 
-    private final List<Topic> topics;
+    private List<Topic> topics;
 
     public TopicsResult(List<Topic> topics) {
         this.topics = topics;
     }
 
+    public TopicsResult(){}
+
     @JsonProperty(required = true)
     @ApiModelProperty(notes = "list of topics handled by the model", required = true)
     public List<Topic> getTopics() {
         return topics;
+    }
+
+    public void setTopics(List<Topic> topics) {
+        this.topics = topics;
     }
 }

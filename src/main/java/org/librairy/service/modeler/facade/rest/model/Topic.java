@@ -39,13 +39,13 @@ public class Topic extends org.librairy.service.modeler.facade.model.Topic {
     }
 
     @Override
-    @ApiModelProperty(value = "representative one-word label")
+    @ApiModelProperty(value = "label")
     public String getName() {
         return super.getName();
     }
 
     @Override
-    @ApiModelProperty(value = "brief description of the meaning")
+    @ApiModelProperty(value = "short representative text of its content")
     public String getDescription() {
         return super.getDescription();
     }

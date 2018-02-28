@@ -10,15 +10,21 @@ import java.util.List;
  */
 public class InferenceResult {
 
-    private final List<Double> shape;
+    private List<Double> shape;
 
     public InferenceResult(List<Double> shape) {
         this.shape = shape;
     }
 
+    public InferenceResult(){}
+
     @JsonProperty(required = true)
-    @ApiModelProperty(notes = "topic distribution of the text", required = true)
+    @ApiModelProperty(notes = "topics distribution", required = true)
     public List<Double> getShape() {
         return shape;
+    }
+
+    public void setShape(List<Double> shape) {
+        this.shape = shape;
     }
 }
