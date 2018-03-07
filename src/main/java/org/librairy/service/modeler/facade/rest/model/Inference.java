@@ -2,7 +2,6 @@ package org.librairy.service.modeler.facade.rest.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import org.librairy.service.modeler.facade.model.TopicDistribution;
 
 import java.util.List;
 
