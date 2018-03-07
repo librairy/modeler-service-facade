@@ -34,8 +34,8 @@ public class TopicDistribution extends org.librairy.service.modeler.facade.model
 
     @Override
     @ApiModelProperty(value = "topic")
-    public org.librairy.service.modeler.facade.model.Topic getTopic() {
-        return super.getTopic();
+    public Topic getTopic() {
+        return new Topic(super.getTopic());
     }
 
     @Override
