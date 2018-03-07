@@ -4,6 +4,7 @@ import org.apache.avro.AvroRemoteException;
 import org.junit.Test;
 import org.librairy.service.modeler.facade.model.ModelerService;
 import org.librairy.service.modeler.facade.model.Topic;
+import org.librairy.service.modeler.facade.model.TopicDistribution;
 import org.librairy.service.modeler.facade.model.Word;
 
 import java.io.IOException;
@@ -21,9 +22,13 @@ public class CommunicationTest {
 
         ModelerService customService = new ModelerService() {
 
+            @Override
+            public List<TopicDistribution> inference(String text) throws AvroRemoteException {
+                return Collections.emptyList();
+            }
 
             @Override
-            public List<Double> inference(String text) throws AvroRemoteException {
+            public List<Double> shape(String text) throws AvroRemoteException {
                 return Collections.emptyList();
             }
 

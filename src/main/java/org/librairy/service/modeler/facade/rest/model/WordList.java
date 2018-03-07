@@ -8,15 +8,15 @@ import java.util.List;
 /**
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
  */
-public class WordsResult {
+public class WordList {
 
     private List<Word> words;
 
-    public WordsResult(List<Word> words) {
+    public WordList(List<Word> words) {
         this.words = words;
     }
 
-    public WordsResult(){}
+    public WordList(){}
 
     @JsonProperty(required = true)
     @ApiModelProperty(notes = "top words of the topic", required = true)

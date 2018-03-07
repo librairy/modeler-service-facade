@@ -10,11 +10,19 @@
       {"name":"id","type":"int", "default":-1},
       {"name":"name","type":"string", "default":""},
       {"name":"description","type":"string", "default":""}
+    ]},
+    {"name": "TopicDistribution", "type": "record", "fields": [
+      {"name":"topic","type":"Topic"},
+      {"name":"score","type":"double", "default": 0.0}
     ]}
  ],
 
  "messages": {
      "inference": {
+       "request": [{"name": "text", "type": "string"}],
+       "response": {"type" : "array","items":"TopicDistribution"}
+     },
+     "shape": {
        "request": [{"name": "text", "type": "string"}],
        "response": {"type" : "array","items":"double"}
      },

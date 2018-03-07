@@ -5,6 +5,7 @@ import org.apache.avro.ipc.NettyTransceiver;
 import org.apache.avro.ipc.specific.SpecificRequestor;
 import org.librairy.service.modeler.facade.model.ModelerService;
 import org.librairy.service.modeler.facade.model.Topic;
+import org.librairy.service.modeler.facade.model.TopicDistribution;
 import org.librairy.service.modeler.facade.model.Word;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,10 +36,18 @@ public class AvroClient {
         if (client != null) client.close();
     }
 
-    public List<Double> inference(String text) throws AvroRemoteException {
+    public List<TopicDistribution> inference(String text) throws AvroRemoteException {
         // fill in the Message record and send it
         LOG.debug("Calling proxy.inference");
-        List<Double> result = proxy.inference(text);
+        List<TopicDistribution> result = proxy.inference(text);
+        LOG.debug("Result: " + result);
+        return result;
+    }
+
+    public List<Double> shape(String text) throws AvroRemoteException {
+        // fill in the Message record and send it
+        LOG.debug("Calling proxy.shape");
+        List<Double> result = proxy.shape(text);
         LOG.debug("Result: " + result);
         return result;
     }
