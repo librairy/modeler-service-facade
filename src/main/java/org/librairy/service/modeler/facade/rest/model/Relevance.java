@@ -12,11 +12,11 @@ import java.lang.reflect.InvocationTargetException;
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class TopicDistribution extends org.librairy.service.modeler.facade.model.TopicDistribution {
+public class Relevance extends org.librairy.service.modeler.facade.model.Relevance {
 
-    public TopicDistribution(org.librairy.service.modeler.facade.model.TopicDistribution topicDistribution){
+    public Relevance(org.librairy.service.modeler.facade.model.Relevance relevance){
         try {
-            BeanUtils.copyProperties(this,topicDistribution);
+            BeanUtils.copyProperties(this,relevance);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {
@@ -33,9 +33,8 @@ public class TopicDistribution extends org.librairy.service.modeler.facade.model
 
 
     @Override
-    @ApiModelProperty(value = "topic")
-    public Topic getTopic() {
-        return new Topic(super.getTopic());
+    @ApiModelProperty(value = "dimension")
+    public Dimension getDimension() { return new Dimension(super.getDimension());
     }
 
     @Override

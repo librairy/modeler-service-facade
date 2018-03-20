@@ -2,10 +2,10 @@ package org.librairy.service.modeler.facade;
 
 import org.apache.avro.AvroRemoteException;
 import org.junit.Test;
+import org.librairy.service.modeler.facade.model.Dimension;
+import org.librairy.service.modeler.facade.model.Element;
 import org.librairy.service.modeler.facade.model.ModelerService;
-import org.librairy.service.modeler.facade.model.Topic;
-import org.librairy.service.modeler.facade.model.TopicDistribution;
-import org.librairy.service.modeler.facade.model.Word;
+import org.librairy.service.modeler.facade.model.Relevance;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -23,7 +23,7 @@ public class CommunicationTest {
         ModelerService customService = new ModelerService() {
 
             @Override
-            public List<TopicDistribution> inference(String text) throws AvroRemoteException {
+            public List<Relevance> inference(String text) throws AvroRemoteException {
                 return Collections.emptyList();
             }
 
@@ -33,12 +33,12 @@ public class CommunicationTest {
             }
 
             @Override
-            public List<Topic> topics() throws AvroRemoteException {
+            public List<Dimension> dimensions() throws AvroRemoteException {
                 return Collections.emptyList();
             }
 
             @Override
-            public List<Word> words(int topicId, int maxWords) throws AvroRemoteException {
+            public List<Element> elements(int topicId, int maxWords) throws AvroRemoteException {
                 return Collections.emptyList();
             }
         };
@@ -57,9 +57,9 @@ public class CommunicationTest {
 
             client.inference("sample text");
 
-            client.topics();
+            client.dimensions();
 
-            client.words(0,5);
+            client.elements(0,5);
         } catch (AvroRemoteException e) {
             e.printStackTrace();
         }

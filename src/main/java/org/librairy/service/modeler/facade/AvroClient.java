@@ -3,10 +3,10 @@ package org.librairy.service.modeler.facade;
 import org.apache.avro.AvroRemoteException;
 import org.apache.avro.ipc.NettyTransceiver;
 import org.apache.avro.ipc.specific.SpecificRequestor;
+import org.librairy.service.modeler.facade.model.Dimension;
+import org.librairy.service.modeler.facade.model.Element;
 import org.librairy.service.modeler.facade.model.ModelerService;
-import org.librairy.service.modeler.facade.model.Topic;
-import org.librairy.service.modeler.facade.model.TopicDistribution;
-import org.librairy.service.modeler.facade.model.Word;
+import org.librairy.service.modeler.facade.model.Relevance;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,10 +36,10 @@ public class AvroClient {
         if (client != null) client.close();
     }
 
-    public List<TopicDistribution> inference(String text) throws AvroRemoteException {
+    public List<Relevance> inference(String text) throws AvroRemoteException {
         // fill in the Message record and send it
         LOG.debug("Calling proxy.inference");
-        List<TopicDistribution> result = proxy.inference(text);
+        List<Relevance> result = proxy.inference(text);
         LOG.debug("Result: " + result);
         return result;
     }
@@ -53,18 +53,18 @@ public class AvroClient {
     }
 
 
-    public List<Topic> topics() throws AvroRemoteException {
+    public List<Dimension> dimensions() throws AvroRemoteException {
         // fill in the Message record and send it
-        LOG.debug("Calling proxy.topics");
-        List<Topic> result = proxy.topics();
+        LOG.debug("Calling proxy.dimensions");
+        List<Dimension> result = proxy.dimensions();
         LOG.debug("Result: " + result);
         return result;
     }
 
-    public List<Word> words(Integer topicId, Integer maxWords) throws AvroRemoteException {
+    public List<Element> elements(Integer topicId, Integer maxWords) throws AvroRemoteException {
         // fill in the Message record and send it
-        LOG.debug("Calling proxy.words");
-        List<Word> result = proxy.words(topicId, maxWords);
+        LOG.debug("Calling proxy.elements");
+        List<Element> result = proxy.elements(topicId, maxWords);
         LOG.debug("Result: " + result);
         return result;
     }

@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
  */
 
-public class WordsRequest {
+public class ElementsRequest {
 
     @ApiModelProperty(notes="maxWords number of words")
     private Integer maxWords;
@@ -14,13 +14,13 @@ public class WordsRequest {
     @ApiModelProperty(notes="topic identifier")
     private Integer topicId;
 
-    public WordsRequest(Integer topicId, Integer maxWords) {
+    public ElementsRequest(Integer topicId, Integer maxWords) {
 
         this.topicId= topicId;
         this.maxWords = maxWords;
     }
 
-    public WordsRequest(){};
+    public ElementsRequest(){};
 
     public Integer getMaxWords() {
         return maxWords;

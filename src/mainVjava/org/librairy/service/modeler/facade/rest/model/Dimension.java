@@ -12,11 +12,11 @@ import java.lang.reflect.InvocationTargetException;
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Word extends org.librairy.service.modeler.facade.model.Word {
+public class Dimension extends org.librairy.service.modeler.facade.model.Dimension {
 
-    public Word(org.librairy.service.modeler.facade.model.Word word){
+    public Dimension(org.librairy.service.modeler.facade.model.Dimension dimension){
         try {
-            BeanUtils.copyProperties(this,word);
+            BeanUtils.copyProperties(this,dimension);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {
@@ -33,16 +33,20 @@ public class Word extends org.librairy.service.modeler.facade.model.Word {
 
 
     @Override
-    @ApiModelProperty(value = "characters")
-    public String getValue() {
-        return super.getValue();
+    @ApiModelProperty(value = "id")
+    public Integer getId() {
+        return super.getId();
     }
 
     @Override
-    @ApiModelProperty(value = "relevance on topic")
-    public Double getScore() {
-        return super.getScore();
+    @ApiModelProperty(value = "label")
+    public String getName() {
+        return super.getName();
     }
 
-
+    @Override
+    @ApiModelProperty(value = "short representative text of its content")
+    public String getDescription() {
+        return super.getDescription();
+    }
 }

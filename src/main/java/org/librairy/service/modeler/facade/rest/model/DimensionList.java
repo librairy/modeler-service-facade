@@ -8,15 +8,15 @@ import java.util.List;
 /**
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
  */
-public class TopicList {
+public class DimensionList {
 
     private List<Topic> topics;
 
-    public TopicList(List<Topic> topics) {
+    public DimensionList(List<Topic> topics) {
         this.topics = topics;
     }
 
-    public TopicList(){}
+    public DimensionList(){}
 
     @JsonProperty(required = true)
     @ApiModelProperty(notes = "list of topics handled by the model", required = true)

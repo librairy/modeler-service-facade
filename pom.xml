@@ -201,7 +201,7 @@
                 <configuration>
                     <filesets>
                         <fileset>
-                            <directory>${project.basedir}/src/main/java/org/librairy/service/model/facade/model</directory>
+                            <directory>${project.basedir}/src/main/java/org/librairy/service/modeler/facade/model</directory>
                             <includes>
                                 <include>**</include>
                             </includes>

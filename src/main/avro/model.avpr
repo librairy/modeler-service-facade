@@ -2,17 +2,17 @@
  "protocol": "ModelerService",
 
  "types": [
-    {"name": "Word", "type": "record", "fields": [
+    {"name": "Element", "type": "record", "fields": [
       {"name":"value","type":"string","default" : ""},
       {"name":"score","type":"double","default" : 0.0}
     ]},
-    {"name": "Topic", "type": "record", "fields": [
+    {"name": "Dimension", "type": "record", "fields": [
       {"name":"id","type":"int", "default":-1},
       {"name":"name","type":"string", "default":""},
       {"name":"description","type":"string", "default":""}
     ]},
-    {"name": "TopicDistribution", "type": "record", "fields": [
-      {"name":"topic","type":"Topic"},
+    {"name": "Relevance", "type": "record", "fields": [
+      {"name":"dimension","type":"Dimension"},
       {"name":"score","type":"double", "default": 0.0}
     ]}
  ],
@@ -20,19 +20,19 @@
  "messages": {
      "inference": {
        "request": [{"name": "text", "type": "string"}],
-       "response": {"type" : "array","items":"TopicDistribution"}
+       "response": {"type" : "array","items":"Relevance"}
      },
      "shape": {
        "request": [{"name": "text", "type": "string"}],
        "response": {"type" : "array","items":"double"}
      },
-     "topics":{
+     "dimensions":{
        "request": [],
-       "response": {"type" : "array","items":"Topic"}
+       "response": {"type" : "array","items":"Dimension"}
      },
-     "words":{
-       "request": [{"name": "topicId", "type": "int"},{"name": "maxWords", "type": "int"}],
-       "response": {"type" : "array","items":"Word"}
+     "elements":{
+       "request": [{"name": "dimensionId", "type": "int"},{"name": "maxElements", "type": "int"}],
+       "response": {"type" : "array","items":"Element"}
      }
  }
 }
