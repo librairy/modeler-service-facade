@@ -8,33 +8,33 @@ import io.swagger.annotations.ApiModelProperty;
 
 public class ElementsRequest {
 
-    @ApiModelProperty(notes="maxWords number of words")
-    private Integer maxWords;
+    @ApiModelProperty(notes="max number of elements")
+    private Integer maxElements;
 
-    @ApiModelProperty(notes="topic identifier")
-    private Integer topicId;
+    @ApiModelProperty(notes="dimension identifier")
+    private Integer dimensionId;
 
-    public ElementsRequest(Integer topicId, Integer maxWords) {
+    public ElementsRequest(Integer dimensionId, Integer maxElements) {
 
-        this.topicId= topicId;
-        this.maxWords = maxWords;
+        this.dimensionId = dimensionId;
+        this.maxElements = maxElements;
     }
 
     public ElementsRequest(){};
 
-    public Integer getMaxWords() {
-        return maxWords;
+    public Integer getMaxElements() {
+        return maxElements;
     }
 
-    public Integer getTopicId() {
-        return topicId;
+    public Integer getDimensionId() {
+        return dimensionId;
     }
 
-    public void setMaxWords(Integer maxWords) {
-        this.maxWords = maxWords;
+    public void setMaxElements(Integer maxElements) {
+        this.maxElements = maxElements;
     }
 
-    public void setTopicId(Integer topicId) {
-        this.topicId = topicId;
+    public void setDimensionId(Integer dimensionId) {
+        this.dimensionId = dimensionId;
     }
 }

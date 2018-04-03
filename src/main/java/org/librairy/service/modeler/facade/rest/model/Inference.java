@@ -10,21 +10,21 @@ import java.util.List;
  */
 public class Inference {
 
-    private List<TopicDistribution> topics;
+    private List<Relevance> relevanceList;
 
-    public Inference(List<TopicDistribution> topics) {
-        this.topics = topics;
+    public Inference(List<Relevance> dimensions) {
+        this.relevanceList = dimensions;
     }
 
     public Inference(){}
 
     @JsonProperty(required = true)
-    @ApiModelProperty(notes = "topics distribution", required = true)
-    public List<TopicDistribution> getTopics() {
-        return topics;
+    @ApiModelProperty(notes = "list of dimension relevance", required = true)
+    public List<Relevance> getDimensions() {
+        return relevanceList;
     }
 
-    public void setTopics(List<TopicDistribution> topics) {
-        this.topics = topics;
+    public void setRelevance(List<Relevance> relevanceList) {
+        this.relevanceList = relevanceList;
     }
 }

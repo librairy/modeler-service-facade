@@ -10,21 +10,21 @@ import java.util.List;
  */
 public class DimensionList {
 
-    private List<Topic> topics;
+    private List<Dimension> dimensions;
 
-    public DimensionList(List<Topic> topics) {
-        this.topics = topics;
+    public DimensionList(List<Dimension> dimensions) {
+        this.dimensions = dimensions;
     }
 
     public DimensionList(){}
 
     @JsonProperty(required = true)
-    @ApiModelProperty(notes = "list of topics handled by the model", required = true)
-    public List<Topic> getTopics() {
-        return topics;
+    @ApiModelProperty(notes = "list of dimensions handled by the model", required = true)
+    public List<Dimension> getDimensions() {
+        return dimensions;
     }
 
-    public void setTopics(List<Topic> topics) {
-        this.topics = topics;
+    public void setTopics(List<Dimension> dimensions) {
+        this.dimensions = dimensions;
     }
 }

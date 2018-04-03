@@ -10,21 +10,21 @@ import java.util.List;
  */
 public class ElementList {
 
-    private List<Word> words;
+    private List<Element> elements;
 
-    public ElementList(List<Word> words) {
-        this.words = words;
+    public ElementList(List<Element> elements) {
+        this.elements = elements;
     }
 
     public ElementList(){}
 
     @JsonProperty(required = true)
-    @ApiModelProperty(notes = "top words of the topic", required = true)
-    public List<Word> getWords() {
-        return words;
+    @ApiModelProperty(notes = "top elements of the dimension", required = true)
+    public List<Element> getElements() {
+        return elements;
     }
 
-    public void setWords(List<Word> words) {
-        this.words = words;
+    public void setElements(List<Element> elements) {
+        this.elements = elements;
     }
 }
