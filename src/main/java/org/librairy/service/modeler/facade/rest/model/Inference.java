@@ -24,7 +24,7 @@ public class Inference {
         return relevanceList;
     }
 
-    public void setRelevance(List<Relevance> relevanceList) {
+    public void setDimensions(List<Relevance> relevanceList) {
         this.relevanceList = relevanceList;
     }
 }
