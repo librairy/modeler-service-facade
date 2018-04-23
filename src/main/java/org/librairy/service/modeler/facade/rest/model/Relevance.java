@@ -24,6 +24,9 @@ public class Relevance extends org.librairy.service.modeler.facade.model.Relevan
         }
     }
 
+    public Relevance() {
+    }
+
     @Override
     @ApiModelProperty(hidden = true)
     @JsonIgnore
@@ -42,5 +45,6 @@ public class Relevance extends org.librairy.service.modeler.facade.model.Relevan
     public Double getScore() {
         return super.getScore();
     }
+
 
 }
