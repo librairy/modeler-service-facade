@@ -25,6 +25,9 @@ public class Model extends org.librairy.service.modeler.facade.model.Model {
         }
     }
 
+    public Model() {
+    }
+
     @Override
     @ApiModelProperty(hidden = true)
     @JsonIgnore
