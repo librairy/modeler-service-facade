@@ -14,6 +14,12 @@
     {"name": "Relevance", "type": "record", "fields": [
       {"name":"dimension","type":"Dimension"},
       {"name":"score","type":"double", "default": 0.0}
+    ]},
+    {"name": "Model", "type": "record", "fields": [
+      {"name":"algorithm","type":"string"},
+      {"name":"date","type":"string"},
+      {"name":"params","type":{"type" : "map","values":"string"}, "default": {}},
+      {"name":"stats","type":{"type" : "map","values":"string"}, "default": {}}
     ]}
  ],
 
@@ -33,6 +39,10 @@
      "elements":{
        "request": [{"name": "dimensionId", "type": "int"},{"name": "maxElements", "type": "int"}],
        "response": {"type" : "array","items":"Element"}
+     },
+     "model":{
+       "request": [],
+       "response": "Model"
      }
  }
 }

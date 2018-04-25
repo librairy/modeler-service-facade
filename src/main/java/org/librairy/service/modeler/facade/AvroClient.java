@@ -3,10 +3,7 @@ package org.librairy.service.modeler.facade;
 import org.apache.avro.AvroRemoteException;
 import org.apache.avro.ipc.NettyTransceiver;
 import org.apache.avro.ipc.specific.SpecificRequestor;
-import org.librairy.service.modeler.facade.model.Dimension;
-import org.librairy.service.modeler.facade.model.Element;
-import org.librairy.service.modeler.facade.model.ModelerService;
-import org.librairy.service.modeler.facade.model.Relevance;
+import org.librairy.service.modeler.facade.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -65,6 +62,14 @@ public class AvroClient {
         // fill in the Message record and send it
         LOG.debug("Calling proxy.elements");
         List<Element> result = proxy.elements(topicId, maxWords);
+        LOG.debug("Result: " + result);
+        return result;
+    }
+
+    public Model model() throws AvroRemoteException {
+        // fill in the Message record and send it
+        LOG.debug("Calling proxy.details");
+        Model result = proxy.model();
         LOG.debug("Result: " + result);
         return result;
     }

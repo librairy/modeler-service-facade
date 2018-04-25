@@ -2,10 +2,7 @@ package org.librairy.service.modeler.facade;
 
 import org.apache.avro.AvroRemoteException;
 import org.junit.Test;
-import org.librairy.service.modeler.facade.model.Dimension;
-import org.librairy.service.modeler.facade.model.Element;
-import org.librairy.service.modeler.facade.model.ModelerService;
-import org.librairy.service.modeler.facade.model.Relevance;
+import org.librairy.service.modeler.facade.model.*;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -41,6 +38,11 @@ public class CommunicationTest {
             public List<Element> elements(int topicId, int maxWords) throws AvroRemoteException {
                 return Collections.emptyList();
             }
+
+            @Override
+            public Model model() throws AvroRemoteException {
+                return Model.newBuilder().build();
+            }
         };
         AvroServer server = new AvroServer(customService);
 
@@ -60,6 +62,9 @@ public class CommunicationTest {
             client.dimensions();
 
             client.elements(0,5);
+
+            client.model();
+
         } catch (AvroRemoteException e) {
             e.printStackTrace();
         }
