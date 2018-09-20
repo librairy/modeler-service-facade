@@ -49,4 +49,10 @@ public class Dimension extends org.librairy.service.modeler.facade.model.Dimensi
     public String getDescription() {
         return super.getDescription();
     }
+
+    @Override
+    @ApiModelProperty(value = "entropy")
+    public Double getEntropy() {
+        return super.getEntropy();
+    }
 }

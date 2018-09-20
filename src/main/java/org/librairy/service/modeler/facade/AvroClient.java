@@ -58,10 +58,10 @@ public class AvroClient {
         return result;
     }
 
-    public List<Element> elements(Integer topicId, Integer maxWords) throws AvroRemoteException {
+    public List<Element> elements(Integer topicId, Integer maxWords, Integer offset, Boolean tfidf) throws AvroRemoteException {
         // fill in the Message record and send it
         LOG.debug("Calling proxy.elements");
-        List<Element> result = proxy.elements(topicId, maxWords);
+        List<Element> result = proxy.elements(topicId, maxWords, offset, tfidf);
         LOG.debug("Result: " + result);
         return result;
     }

@@ -19,7 +19,7 @@ public class ElementList {
     public ElementList(){}
 
     @JsonProperty(required = true)
-    @ApiModelProperty(notes = "top elements of the dimension", required = true)
+    @ApiModelProperty(notes = "list of elements describing the dimension", required = true)
     public List<Element> getElements() {
         return elements;
     }

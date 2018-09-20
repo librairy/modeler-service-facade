@@ -35,7 +35,7 @@ public class CommunicationTest {
             }
 
             @Override
-            public List<Element> elements(int topicId, int maxWords) throws AvroRemoteException {
+            public List<Element> elements(int dimensionId, int maxElements, int offset, boolean tfidf) throws AvroRemoteException {
                 return Collections.emptyList();
             }
 
@@ -61,7 +61,7 @@ public class CommunicationTest {
 
             client.dimensions();
 
-            client.elements(0,5);
+            client.elements(0,5,0,false);
 
             client.model();
 

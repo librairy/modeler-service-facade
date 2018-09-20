@@ -9,7 +9,8 @@
     {"name": "Dimension", "type": "record", "fields": [
       {"name":"id","type":"int", "default":-1},
       {"name":"name","type":"string", "default":""},
-      {"name":"description","type":"string", "default":""}
+      {"name":"description","type":"string", "default":""},
+      {"name":"entropy","type":"double", "default":0.0}
     ]},
     {"name": "Relevance", "type": "record", "fields": [
       {"name":"dimension","type":"Dimension"},
@@ -37,7 +38,7 @@
        "response": {"type" : "array","items":"Dimension"}
      },
      "elements":{
-       "request": [{"name": "dimensionId", "type": "int"},{"name": "maxElements", "type": "int"}],
+       "request": [{"name": "dimensionId", "type": "int"},{"name": "maxElements", "type": "int"},{"name": "offset", "type": "int"},{"name": "tfidf", "type": "boolean", "default": "false"}],
        "response": {"type" : "array","items":"Element"}
      },
      "model":{

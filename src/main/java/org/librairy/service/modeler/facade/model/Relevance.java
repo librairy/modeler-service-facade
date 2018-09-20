@@ -7,7 +7,7 @@ package org.librairy.service.modeler.facade.model;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Relevance extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Relevance\",\"namespace\":\"org.librairy.service.modeler.facade.model\",\"fields\":[{\"name\":\"dimension\",\"type\":{\"type\":\"record\",\"name\":\"Dimension\",\"fields\":[{\"name\":\"id\",\"type\":\"int\",\"default\":-1},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"description\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"}]}},{\"name\":\"score\",\"type\":\"double\",\"default\":0.0}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Relevance\",\"namespace\":\"org.librairy.service.modeler.facade.model\",\"fields\":[{\"name\":\"dimension\",\"type\":{\"type\":\"record\",\"name\":\"Dimension\",\"fields\":[{\"name\":\"id\",\"type\":\"int\",\"default\":-1},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"description\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"entropy\",\"type\":\"double\",\"default\":0.0}]}},{\"name\":\"score\",\"type\":\"double\",\"default\":0.0}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
    private org.librairy.service.modeler.facade.model.Dimension dimension;
    private double score;

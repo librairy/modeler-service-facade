@@ -7,11 +7,12 @@ package org.librairy.service.modeler.facade.model;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Dimension extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Dimension\",\"namespace\":\"org.librairy.service.modeler.facade.model\",\"fields\":[{\"name\":\"id\",\"type\":\"int\",\"default\":-1},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"description\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Dimension\",\"namespace\":\"org.librairy.service.modeler.facade.model\",\"fields\":[{\"name\":\"id\",\"type\":\"int\",\"default\":-1},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"description\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"entropy\",\"type\":\"double\",\"default\":0.0}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
    private int id;
    private java.lang.String name;
    private java.lang.String description;
+   private double entropy;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -23,10 +24,11 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
   /**
    * All-args constructor.
    */
-  public Dimension(java.lang.Integer id, java.lang.String name, java.lang.String description) {
+  public Dimension(java.lang.Integer id, java.lang.String name, java.lang.String description, java.lang.Double entropy) {
     this.id = id;
     this.name = name;
     this.description = description;
+    this.entropy = entropy;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -36,6 +38,7 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
     case 0: return id;
     case 1: return name;
     case 2: return description;
+    case 3: return entropy;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -46,6 +49,7 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
     case 0: id = (java.lang.Integer)value$; break;
     case 1: name = (java.lang.String)value$; break;
     case 2: description = (java.lang.String)value$; break;
+    case 3: entropy = (java.lang.Double)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -95,6 +99,21 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
     this.description = value;
   }
 
+  /**
+   * Gets the value of the 'entropy' field.
+   */
+  public java.lang.Double getEntropy() {
+    return entropy;
+  }
+
+  /**
+   * Sets the value of the 'entropy' field.
+   * @param value the value to set.
+   */
+  public void setEntropy(java.lang.Double value) {
+    this.entropy = value;
+  }
+
   /** Creates a new Dimension RecordBuilder */
   public static org.librairy.service.modeler.facade.model.Dimension.Builder newBuilder() {
     return new org.librairy.service.modeler.facade.model.Dimension.Builder();
@@ -119,6 +138,7 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
     private int id;
     private java.lang.String name;
     private java.lang.String description;
+    private double entropy;
 
     /** Creates a new Builder */
     private Builder() {
@@ -140,6 +160,10 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
         this.description = data().deepCopy(fields()[2].schema(), other.description);
         fieldSetFlags()[2] = true;
       }
+      if (isValidValue(fields()[3], other.entropy)) {
+        this.entropy = data().deepCopy(fields()[3].schema(), other.entropy);
+        fieldSetFlags()[3] = true;
+      }
     }
     
     /** Creates a Builder by copying an existing Dimension instance */
@@ -156,6 +180,10 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
       if (isValidValue(fields()[2], other.description)) {
         this.description = data().deepCopy(fields()[2].schema(), other.description);
         fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.entropy)) {
+        this.entropy = data().deepCopy(fields()[3].schema(), other.entropy);
+        fieldSetFlags()[3] = true;
       }
     }
 
@@ -233,6 +261,30 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
       return this;
     }
 
+    /** Gets the value of the 'entropy' field */
+    public java.lang.Double getEntropy() {
+      return entropy;
+    }
+    
+    /** Sets the value of the 'entropy' field */
+    public org.librairy.service.modeler.facade.model.Dimension.Builder setEntropy(double value) {
+      validate(fields()[3], value);
+      this.entropy = value;
+      fieldSetFlags()[3] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'entropy' field has been set */
+    public boolean hasEntropy() {
+      return fieldSetFlags()[3];
+    }
+    
+    /** Clears the value of the 'entropy' field */
+    public org.librairy.service.modeler.facade.model.Dimension.Builder clearEntropy() {
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
     @Override
     public Dimension build() {
       try {
@@ -240,6 +292,7 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.Integer) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.String) defaultValue(fields()[1]);
         record.description = fieldSetFlags()[2] ? this.description : (java.lang.String) defaultValue(fields()[2]);
+        record.entropy = fieldSetFlags()[3] ? this.entropy : (java.lang.Double) defaultValue(fields()[3]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
