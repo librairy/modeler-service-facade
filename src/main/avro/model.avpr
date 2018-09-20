@@ -38,7 +38,7 @@
        "response": {"type" : "array","items":"Dimension"}
      },
      "elements":{
-       "request": [{"name": "dimensionId", "type": "int"},{"name": "maxElements", "type": "int"},{"name": "offset", "type": "int"},{"name": "tfidf", "type": "boolean", "default": "false"}],
+       "request": [{"name": "dimensionId", "type": "int"},{"name": "maxElements", "type": "int"},{"name": "offset", "type": "int"},{"name": "tfidf", "type": "boolean", "default": false}],
        "response": {"type" : "array","items":"Element"}
      },
      "model":{
