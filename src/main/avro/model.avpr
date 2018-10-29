@@ -37,7 +37,7 @@
 
  "messages": {
      "createInference": {
-       "request": [{"name": "text", "type": "string"}],
+       "request": [{"name": "text", "type": "string"},{"name": "topics", "type": "boolean", "default": false}],
        "response": "Inference"
      },
      "getTopics":{

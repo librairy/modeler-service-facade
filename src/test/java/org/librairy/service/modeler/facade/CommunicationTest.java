@@ -19,9 +19,8 @@ public class CommunicationTest {
 
         ModelerService customService = new ModelerService() {
 
-
             @Override
-            public Inference createInference(String text) throws AvroRemoteException {
+            public Inference createInference(String text, boolean topics) throws AvroRemoteException {
                 return Inference.newBuilder().build();
             }
 
@@ -63,7 +62,7 @@ public class CommunicationTest {
 
         try {
 
-            client.createInference("sample text");
+            client.createInference("sample text",true);
 
             client.getTopics();
 

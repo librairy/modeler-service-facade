@@ -54,7 +54,9 @@ public class TopicNeighbour extends org.librairy.service.modeler.facade.model.To
     }
 
     @Override
-    @ApiModelProperty(value = "proximity function")
+    //@ApiModelProperty(value = "proximity function")
+    @ApiModelProperty(hidden = true)
+    @JsonIgnore
     public Similarity getSimilarity() {
         return super.getSimilarity();
     }

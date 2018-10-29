@@ -33,10 +33,10 @@ public class AvroClient {
         if (client != null) client.close();
     }
 
-    public Inference createInference(String text) throws AvroRemoteException {
+    public Inference createInference(String text, Boolean topics) throws AvroRemoteException {
         // fill in the Message record and send it
         LOG.debug("Calling proxy.createInference");
-        Inference result = proxy.createInference(text);
+        Inference result = proxy.createInference(text,topics);
         LOG.debug("Result: " + result);
         return result;
     }
