@@ -42,6 +42,12 @@ public class TopicSummary extends org.librairy.service.modeler.facade.model.Topi
     }
 
     @Override
+    @ApiModelProperty(value = "name")
+    public String getName() {
+        return super.getName();
+    }
+
+    @Override
     @ApiModelProperty(value = "short representative text of its content")
     public String getDescription() {
         return super.getDescription();

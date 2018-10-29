@@ -7,9 +7,10 @@ package org.librairy.service.modeler.facade.model;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class TopicSummary extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TopicSummary\",\"namespace\":\"org.librairy.service.modeler.facade.model\",\"fields\":[{\"name\":\"id\",\"type\":\"int\",\"default\":-1},{\"name\":\"description\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TopicSummary\",\"namespace\":\"org.librairy.service.modeler.facade.model\",\"fields\":[{\"name\":\"id\",\"type\":\"int\",\"default\":-1},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"description\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
    private int id;
+   private java.lang.String name;
    private java.lang.String description;
 
   /**
@@ -22,8 +23,9 @@ public class TopicSummary extends org.apache.avro.specific.SpecificRecordBase im
   /**
    * All-args constructor.
    */
-  public TopicSummary(java.lang.Integer id, java.lang.String description) {
+  public TopicSummary(java.lang.Integer id, java.lang.String name, java.lang.String description) {
     this.id = id;
+    this.name = name;
     this.description = description;
   }
 
@@ -32,7 +34,8 @@ public class TopicSummary extends org.apache.avro.specific.SpecificRecordBase im
   public java.lang.Object get(int field$) {
     switch (field$) {
     case 0: return id;
-    case 1: return description;
+    case 1: return name;
+    case 2: return description;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -41,7 +44,8 @@ public class TopicSummary extends org.apache.avro.specific.SpecificRecordBase im
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: id = (java.lang.Integer)value$; break;
-    case 1: description = (java.lang.String)value$; break;
+    case 1: name = (java.lang.String)value$; break;
+    case 2: description = (java.lang.String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -59,6 +63,21 @@ public class TopicSummary extends org.apache.avro.specific.SpecificRecordBase im
    */
   public void setId(java.lang.Integer value) {
     this.id = value;
+  }
+
+  /**
+   * Gets the value of the 'name' field.
+   */
+  public java.lang.String getName() {
+    return name;
+  }
+
+  /**
+   * Sets the value of the 'name' field.
+   * @param value the value to set.
+   */
+  public void setName(java.lang.String value) {
+    this.name = value;
   }
 
   /**
@@ -98,6 +117,7 @@ public class TopicSummary extends org.apache.avro.specific.SpecificRecordBase im
     implements org.apache.avro.data.RecordBuilder<TopicSummary> {
 
     private int id;
+    private java.lang.String name;
     private java.lang.String description;
 
     /** Creates a new Builder */
@@ -112,9 +132,13 @@ public class TopicSummary extends org.apache.avro.specific.SpecificRecordBase im
         this.id = data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.description)) {
-        this.description = data().deepCopy(fields()[1].schema(), other.description);
+      if (isValidValue(fields()[1], other.name)) {
+        this.name = data().deepCopy(fields()[1].schema(), other.name);
         fieldSetFlags()[1] = true;
+      }
+      if (isValidValue(fields()[2], other.description)) {
+        this.description = data().deepCopy(fields()[2].schema(), other.description);
+        fieldSetFlags()[2] = true;
       }
     }
     
@@ -125,9 +149,13 @@ public class TopicSummary extends org.apache.avro.specific.SpecificRecordBase im
         this.id = data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.description)) {
-        this.description = data().deepCopy(fields()[1].schema(), other.description);
+      if (isValidValue(fields()[1], other.name)) {
+        this.name = data().deepCopy(fields()[1].schema(), other.name);
         fieldSetFlags()[1] = true;
+      }
+      if (isValidValue(fields()[2], other.description)) {
+        this.description = data().deepCopy(fields()[2].schema(), other.description);
+        fieldSetFlags()[2] = true;
       }
     }
 
@@ -155,6 +183,31 @@ public class TopicSummary extends org.apache.avro.specific.SpecificRecordBase im
       return this;
     }
 
+    /** Gets the value of the 'name' field */
+    public java.lang.String getName() {
+      return name;
+    }
+    
+    /** Sets the value of the 'name' field */
+    public org.librairy.service.modeler.facade.model.TopicSummary.Builder setName(java.lang.String value) {
+      validate(fields()[1], value);
+      this.name = value;
+      fieldSetFlags()[1] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'name' field has been set */
+    public boolean hasName() {
+      return fieldSetFlags()[1];
+    }
+    
+    /** Clears the value of the 'name' field */
+    public org.librairy.service.modeler.facade.model.TopicSummary.Builder clearName() {
+      name = null;
+      fieldSetFlags()[1] = false;
+      return this;
+    }
+
     /** Gets the value of the 'description' field */
     public java.lang.String getDescription() {
       return description;
@@ -162,21 +215,21 @@ public class TopicSummary extends org.apache.avro.specific.SpecificRecordBase im
     
     /** Sets the value of the 'description' field */
     public org.librairy.service.modeler.facade.model.TopicSummary.Builder setDescription(java.lang.String value) {
-      validate(fields()[1], value);
+      validate(fields()[2], value);
       this.description = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this; 
     }
     
     /** Checks whether the 'description' field has been set */
     public boolean hasDescription() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
     
     /** Clears the value of the 'description' field */
     public org.librairy.service.modeler.facade.model.TopicSummary.Builder clearDescription() {
       description = null;
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
 
@@ -185,7 +238,8 @@ public class TopicSummary extends org.apache.avro.specific.SpecificRecordBase im
       try {
         TopicSummary record = new TopicSummary();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.Integer) defaultValue(fields()[0]);
-        record.description = fieldSetFlags()[1] ? this.description : (java.lang.String) defaultValue(fields()[1]);
+        record.name = fieldSetFlags()[1] ? this.name : (java.lang.String) defaultValue(fields()[1]);
+        record.description = fieldSetFlags()[2] ? this.description : (java.lang.String) defaultValue(fields()[2]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

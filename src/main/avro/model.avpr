@@ -15,6 +15,7 @@
      ]},
      {"name": "TopicSummary", "type": "record", "fields": [
        {"name":"id","type":"int", "default":-1},
+       {"name":"name","type":"string", "default":""},
        {"name":"description","type":"string", "default":""}
      ]},
      {"name": "TopicNeighbour", "type": "record", "fields": [

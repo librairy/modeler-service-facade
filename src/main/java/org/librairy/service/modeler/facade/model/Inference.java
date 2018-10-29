@@ -7,7 +7,7 @@ package org.librairy.service.modeler.facade.model;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Inference extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Inference\",\"namespace\":\"org.librairy.service.modeler.facade.model\",\"fields\":[{\"name\":\"vector\",\"type\":{\"type\":\"array\",\"items\":\"double\"},\"default\":[]},{\"name\":\"topics\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"TopicSummary\",\"fields\":[{\"name\":\"id\",\"type\":\"int\",\"default\":-1},{\"name\":\"description\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"}]}},\"default\":[]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Inference\",\"namespace\":\"org.librairy.service.modeler.facade.model\",\"fields\":[{\"name\":\"vector\",\"type\":{\"type\":\"array\",\"items\":\"double\"},\"default\":[]},{\"name\":\"topics\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"TopicSummary\",\"fields\":[{\"name\":\"id\",\"type\":\"int\",\"default\":-1},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"description\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"}]}},\"default\":[]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
    private java.util.List<java.lang.Double> vector;
    private java.util.List<org.librairy.service.modeler.facade.model.TopicSummary> topics;
