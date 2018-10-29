@@ -6,8 +6,8 @@
 package org.librairy.service.modeler.facade.model;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
-public class Element extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Element\",\"namespace\":\"org.librairy.service.modeler.facade.model\",\"fields\":[{\"name\":\"value\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"score\",\"type\":\"double\",\"default\":0.0}]}");
+public class Word extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Word\",\"namespace\":\"org.librairy.service.modeler.facade.model\",\"fields\":[{\"name\":\"value\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"score\",\"type\":\"double\",\"default\":0.0}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
    private java.lang.String value;
    private double score;
@@ -17,12 +17,12 @@ public class Element extends org.apache.avro.specific.SpecificRecordBase impleme
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>. 
    */
-  public Element() {}
+  public Word() {}
 
   /**
    * All-args constructor.
    */
-  public Element(java.lang.String value, java.lang.Double score) {
+  public Word(java.lang.String value, java.lang.Double score) {
     this.value = value;
     this.score = score;
   }
@@ -76,37 +76,37 @@ public class Element extends org.apache.avro.specific.SpecificRecordBase impleme
     this.score = value;
   }
 
-  /** Creates a new Element RecordBuilder */
-  public static org.librairy.service.modeler.facade.model.Element.Builder newBuilder() {
-    return new org.librairy.service.modeler.facade.model.Element.Builder();
+  /** Creates a new Word RecordBuilder */
+  public static org.librairy.service.modeler.facade.model.Word.Builder newBuilder() {
+    return new org.librairy.service.modeler.facade.model.Word.Builder();
   }
   
-  /** Creates a new Element RecordBuilder by copying an existing Builder */
-  public static org.librairy.service.modeler.facade.model.Element.Builder newBuilder(org.librairy.service.modeler.facade.model.Element.Builder other) {
-    return new org.librairy.service.modeler.facade.model.Element.Builder(other);
+  /** Creates a new Word RecordBuilder by copying an existing Builder */
+  public static org.librairy.service.modeler.facade.model.Word.Builder newBuilder(org.librairy.service.modeler.facade.model.Word.Builder other) {
+    return new org.librairy.service.modeler.facade.model.Word.Builder(other);
   }
   
-  /** Creates a new Element RecordBuilder by copying an existing Element instance */
-  public static org.librairy.service.modeler.facade.model.Element.Builder newBuilder(org.librairy.service.modeler.facade.model.Element other) {
-    return new org.librairy.service.modeler.facade.model.Element.Builder(other);
+  /** Creates a new Word RecordBuilder by copying an existing Word instance */
+  public static org.librairy.service.modeler.facade.model.Word.Builder newBuilder(org.librairy.service.modeler.facade.model.Word other) {
+    return new org.librairy.service.modeler.facade.model.Word.Builder(other);
   }
   
   /**
-   * RecordBuilder for Element instances.
+   * RecordBuilder for Word instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Element>
-    implements org.apache.avro.data.RecordBuilder<Element> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Word>
+    implements org.apache.avro.data.RecordBuilder<Word> {
 
     private java.lang.String value;
     private double score;
 
     /** Creates a new Builder */
     private Builder() {
-      super(org.librairy.service.modeler.facade.model.Element.SCHEMA$);
+      super(org.librairy.service.modeler.facade.model.Word.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(org.librairy.service.modeler.facade.model.Element.Builder other) {
+    private Builder(org.librairy.service.modeler.facade.model.Word.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.value)) {
         this.value = data().deepCopy(fields()[0].schema(), other.value);
@@ -118,9 +118,9 @@ public class Element extends org.apache.avro.specific.SpecificRecordBase impleme
       }
     }
     
-    /** Creates a Builder by copying an existing Element instance */
-    private Builder(org.librairy.service.modeler.facade.model.Element other) {
-            super(org.librairy.service.modeler.facade.model.Element.SCHEMA$);
+    /** Creates a Builder by copying an existing Word instance */
+    private Builder(org.librairy.service.modeler.facade.model.Word other) {
+            super(org.librairy.service.modeler.facade.model.Word.SCHEMA$);
       if (isValidValue(fields()[0], other.value)) {
         this.value = data().deepCopy(fields()[0].schema(), other.value);
         fieldSetFlags()[0] = true;
@@ -137,7 +137,7 @@ public class Element extends org.apache.avro.specific.SpecificRecordBase impleme
     }
     
     /** Sets the value of the 'value' field */
-    public org.librairy.service.modeler.facade.model.Element.Builder setValue(java.lang.String value) {
+    public org.librairy.service.modeler.facade.model.Word.Builder setValue(java.lang.String value) {
       validate(fields()[0], value);
       this.value = value;
       fieldSetFlags()[0] = true;
@@ -150,7 +150,7 @@ public class Element extends org.apache.avro.specific.SpecificRecordBase impleme
     }
     
     /** Clears the value of the 'value' field */
-    public org.librairy.service.modeler.facade.model.Element.Builder clearValue() {
+    public org.librairy.service.modeler.facade.model.Word.Builder clearValue() {
       value = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -162,7 +162,7 @@ public class Element extends org.apache.avro.specific.SpecificRecordBase impleme
     }
     
     /** Sets the value of the 'score' field */
-    public org.librairy.service.modeler.facade.model.Element.Builder setScore(double value) {
+    public org.librairy.service.modeler.facade.model.Word.Builder setScore(double value) {
       validate(fields()[1], value);
       this.score = value;
       fieldSetFlags()[1] = true;
@@ -175,15 +175,15 @@ public class Element extends org.apache.avro.specific.SpecificRecordBase impleme
     }
     
     /** Clears the value of the 'score' field */
-    public org.librairy.service.modeler.facade.model.Element.Builder clearScore() {
+    public org.librairy.service.modeler.facade.model.Word.Builder clearScore() {
       fieldSetFlags()[1] = false;
       return this;
     }
 
     @Override
-    public Element build() {
+    public Word build() {
       try {
-        Element record = new Element();
+        Word record = new Word();
         record.value = fieldSetFlags()[0] ? this.value : (java.lang.String) defaultValue(fields()[0]);
         record.score = fieldSetFlags()[1] ? this.score : (java.lang.Double) defaultValue(fields()[1]);
         return record;

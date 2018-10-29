@@ -12,16 +12,19 @@ import java.lang.reflect.InvocationTargetException;
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Dimension extends org.librairy.service.modeler.facade.model.Dimension {
+public class Word extends org.librairy.service.modeler.facade.model.Word {
 
-    public Dimension(org.librairy.service.modeler.facade.model.Dimension dimension){
+    public Word(org.librairy.service.modeler.facade.model.Word word){
         try {
-            BeanUtils.copyProperties(this,dimension);
+            BeanUtils.copyProperties(this,word);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public Word() {
     }
 
     @Override
@@ -33,26 +36,16 @@ public class Dimension extends org.librairy.service.modeler.facade.model.Dimensi
 
 
     @Override
-    @ApiModelProperty(value = "id")
-    public Integer getId() {
-        return super.getId();
+    @ApiModelProperty(value = "characters")
+    public String getValue() {
+        return super.getValue();
     }
 
     @Override
-    @ApiModelProperty(value = "label")
-    public String getName() {
-        return super.getName();
+    @ApiModelProperty(value = "relevance")
+    public Double getScore() {
+        return super.getScore();
     }
 
-    @Override
-    @ApiModelProperty(value = "short representative text of its content")
-    public String getDescription() {
-        return super.getDescription();
-    }
 
-    @Override
-    @ApiModelProperty(value = "entropy")
-    public Double getEntropy() {
-        return super.getEntropy();
-    }
 }

@@ -5,19 +5,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.annotations.ApiModelProperty;
 import org.apache.avro.Schema;
 import org.apache.commons.beanutils.BeanUtils;
+import org.librairy.service.modeler.facade.model.Similarity;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.Map;
 
 /**
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Model extends org.librairy.service.modeler.facade.model.Model {
+public class TopicNeighbour extends org.librairy.service.modeler.facade.model.TopicNeighbour {
 
-    public Model(org.librairy.service.modeler.facade.model.Model model){
+    public TopicNeighbour(org.librairy.service.modeler.facade.model.TopicNeighbour topicNeighbour){
         try {
-            BeanUtils.copyProperties(this,model);
+            BeanUtils.copyProperties(this,topicNeighbour);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {
@@ -25,7 +25,7 @@ public class Model extends org.librairy.service.modeler.facade.model.Model {
         }
     }
 
-    public Model() {
+    public TopicNeighbour() {
     }
 
     @Override
@@ -35,26 +35,29 @@ public class Model extends org.librairy.service.modeler.facade.model.Model {
         return super.getSchema();
     }
 
-
     @Override
-    @ApiModelProperty(value = "algorithm")
-    public String getAlgorithm() {
-        return super.getAlgorithm();
+    @ApiModelProperty(value = "id")
+    public Integer getId() {
+        return super.getId();
     }
 
     @Override
-    @ApiModelProperty(value = "creation date")
-    public String getDate() {
-        return super.getDate();
+    @ApiModelProperty(value = "short representative text of its content")
+    public String getDescription() {
+        return super.getDescription();
     }
 
     @Override
-    @ApiModelProperty(value = "settings")
-    public Map<String,String> getParams() {
-        return super.getParams();
+    @ApiModelProperty(value = "relevance")
+    public Double getScore() {
+        return super.getScore();
     }
 
     @Override
-    @ApiModelProperty(value = "details")
-    public Map<String,String> getStats() {return super.getStats();}
+    @ApiModelProperty(value = "proximity function")
+    public Similarity getSimilarity() {
+        return super.getSimilarity();
+    }
+
+
 }

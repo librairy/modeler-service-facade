@@ -6,8 +6,8 @@
 package org.librairy.service.modeler.facade.model;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
-public class Dimension extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Dimension\",\"namespace\":\"org.librairy.service.modeler.facade.model\",\"fields\":[{\"name\":\"id\",\"type\":\"int\",\"default\":-1},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"description\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"entropy\",\"type\":\"double\",\"default\":0.0}]}");
+public class Topic extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Topic\",\"namespace\":\"org.librairy.service.modeler.facade.model\",\"fields\":[{\"name\":\"id\",\"type\":\"int\",\"default\":-1},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"description\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"entropy\",\"type\":\"double\",\"default\":0.0}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
    private int id;
    private java.lang.String name;
@@ -19,12 +19,12 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>. 
    */
-  public Dimension() {}
+  public Topic() {}
 
   /**
    * All-args constructor.
    */
-  public Dimension(java.lang.Integer id, java.lang.String name, java.lang.String description, java.lang.Double entropy) {
+  public Topic(java.lang.Integer id, java.lang.String name, java.lang.String description, java.lang.Double entropy) {
     this.id = id;
     this.name = name;
     this.description = description;
@@ -114,26 +114,26 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
     this.entropy = value;
   }
 
-  /** Creates a new Dimension RecordBuilder */
-  public static org.librairy.service.modeler.facade.model.Dimension.Builder newBuilder() {
-    return new org.librairy.service.modeler.facade.model.Dimension.Builder();
+  /** Creates a new Topic RecordBuilder */
+  public static org.librairy.service.modeler.facade.model.Topic.Builder newBuilder() {
+    return new org.librairy.service.modeler.facade.model.Topic.Builder();
   }
   
-  /** Creates a new Dimension RecordBuilder by copying an existing Builder */
-  public static org.librairy.service.modeler.facade.model.Dimension.Builder newBuilder(org.librairy.service.modeler.facade.model.Dimension.Builder other) {
-    return new org.librairy.service.modeler.facade.model.Dimension.Builder(other);
+  /** Creates a new Topic RecordBuilder by copying an existing Builder */
+  public static org.librairy.service.modeler.facade.model.Topic.Builder newBuilder(org.librairy.service.modeler.facade.model.Topic.Builder other) {
+    return new org.librairy.service.modeler.facade.model.Topic.Builder(other);
   }
   
-  /** Creates a new Dimension RecordBuilder by copying an existing Dimension instance */
-  public static org.librairy.service.modeler.facade.model.Dimension.Builder newBuilder(org.librairy.service.modeler.facade.model.Dimension other) {
-    return new org.librairy.service.modeler.facade.model.Dimension.Builder(other);
+  /** Creates a new Topic RecordBuilder by copying an existing Topic instance */
+  public static org.librairy.service.modeler.facade.model.Topic.Builder newBuilder(org.librairy.service.modeler.facade.model.Topic other) {
+    return new org.librairy.service.modeler.facade.model.Topic.Builder(other);
   }
   
   /**
-   * RecordBuilder for Dimension instances.
+   * RecordBuilder for Topic instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Dimension>
-    implements org.apache.avro.data.RecordBuilder<Dimension> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Topic>
+    implements org.apache.avro.data.RecordBuilder<Topic> {
 
     private int id;
     private java.lang.String name;
@@ -142,11 +142,11 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
 
     /** Creates a new Builder */
     private Builder() {
-      super(org.librairy.service.modeler.facade.model.Dimension.SCHEMA$);
+      super(org.librairy.service.modeler.facade.model.Topic.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(org.librairy.service.modeler.facade.model.Dimension.Builder other) {
+    private Builder(org.librairy.service.modeler.facade.model.Topic.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -166,9 +166,9 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
       }
     }
     
-    /** Creates a Builder by copying an existing Dimension instance */
-    private Builder(org.librairy.service.modeler.facade.model.Dimension other) {
-            super(org.librairy.service.modeler.facade.model.Dimension.SCHEMA$);
+    /** Creates a Builder by copying an existing Topic instance */
+    private Builder(org.librairy.service.modeler.facade.model.Topic other) {
+            super(org.librairy.service.modeler.facade.model.Topic.SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = true;
@@ -193,7 +193,7 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'id' field */
-    public org.librairy.service.modeler.facade.model.Dimension.Builder setId(int value) {
+    public org.librairy.service.modeler.facade.model.Topic.Builder setId(int value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -206,7 +206,7 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'id' field */
-    public org.librairy.service.modeler.facade.model.Dimension.Builder clearId() {
+    public org.librairy.service.modeler.facade.model.Topic.Builder clearId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -217,7 +217,7 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'name' field */
-    public org.librairy.service.modeler.facade.model.Dimension.Builder setName(java.lang.String value) {
+    public org.librairy.service.modeler.facade.model.Topic.Builder setName(java.lang.String value) {
       validate(fields()[1], value);
       this.name = value;
       fieldSetFlags()[1] = true;
@@ -230,7 +230,7 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'name' field */
-    public org.librairy.service.modeler.facade.model.Dimension.Builder clearName() {
+    public org.librairy.service.modeler.facade.model.Topic.Builder clearName() {
       name = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -242,7 +242,7 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'description' field */
-    public org.librairy.service.modeler.facade.model.Dimension.Builder setDescription(java.lang.String value) {
+    public org.librairy.service.modeler.facade.model.Topic.Builder setDescription(java.lang.String value) {
       validate(fields()[2], value);
       this.description = value;
       fieldSetFlags()[2] = true;
@@ -255,7 +255,7 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'description' field */
-    public org.librairy.service.modeler.facade.model.Dimension.Builder clearDescription() {
+    public org.librairy.service.modeler.facade.model.Topic.Builder clearDescription() {
       description = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -267,7 +267,7 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'entropy' field */
-    public org.librairy.service.modeler.facade.model.Dimension.Builder setEntropy(double value) {
+    public org.librairy.service.modeler.facade.model.Topic.Builder setEntropy(double value) {
       validate(fields()[3], value);
       this.entropy = value;
       fieldSetFlags()[3] = true;
@@ -280,15 +280,15 @@ public class Dimension extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'entropy' field */
-    public org.librairy.service.modeler.facade.model.Dimension.Builder clearEntropy() {
+    public org.librairy.service.modeler.facade.model.Topic.Builder clearEntropy() {
       fieldSetFlags()[3] = false;
       return this;
     }
 
     @Override
-    public Dimension build() {
+    public Topic build() {
       try {
-        Dimension record = new Dimension();
+        Topic record = new Topic();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.Integer) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.String) defaultValue(fields()[1]);
         record.description = fieldSetFlags()[2] ? this.description : (java.lang.String) defaultValue(fields()[2]);

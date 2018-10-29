@@ -7,17 +7,16 @@ import org.apache.avro.Schema;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.List;
 
 /**
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Inference extends org.librairy.service.modeler.facade.model.Inference {
+public class TopicSummary extends org.librairy.service.modeler.facade.model.TopicSummary {
 
-    public Inference(org.librairy.service.modeler.facade.model.Inference inference){
+    public TopicSummary(org.librairy.service.modeler.facade.model.TopicSummary topicSummary){
         try {
-            BeanUtils.copyProperties(this,inference);
+            BeanUtils.copyProperties(this,topicSummary);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {
@@ -25,7 +24,7 @@ public class Inference extends org.librairy.service.modeler.facade.model.Inferen
         }
     }
 
-    public Inference() {
+    public TopicSummary() {
     }
 
     @Override
@@ -37,15 +36,17 @@ public class Inference extends org.librairy.service.modeler.facade.model.Inferen
 
 
     @Override
-    @ApiModelProperty(value = "topics distribution")
-    public List<Double> getVector() {
-        return super.getVector();
+    @ApiModelProperty(value = "id")
+    public Integer getId() {
+        return super.getId();
     }
 
     @Override
-    @ApiModelProperty(value = "topics description")
-    public List<org.librairy.service.modeler.facade.model.TopicSummary> getTopics() {
-        return super.getTopics();
+    @ApiModelProperty(value = "short representative text of its content")
+    public String getDescription() {
+        return super.getDescription();
     }
+
+
 
 }

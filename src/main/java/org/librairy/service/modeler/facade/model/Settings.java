@@ -6,8 +6,8 @@
 package org.librairy.service.modeler.facade.model;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
-public class Model extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Model\",\"namespace\":\"org.librairy.service.modeler.facade.model\",\"fields\":[{\"name\":\"algorithm\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"params\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"avro.java.string\":\"String\"},\"default\":{}},{\"name\":\"stats\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"avro.java.string\":\"String\"},\"default\":{}}]}");
+public class Settings extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Settings\",\"namespace\":\"org.librairy.service.modeler.facade.model\",\"fields\":[{\"name\":\"algorithm\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"date\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"params\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"avro.java.string\":\"String\"},\"default\":{}},{\"name\":\"stats\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"avro.java.string\":\"String\"},\"default\":{}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
    private java.lang.String algorithm;
    private java.lang.String date;
@@ -19,12 +19,12 @@ public class Model extends org.apache.avro.specific.SpecificRecordBase implement
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>. 
    */
-  public Model() {}
+  public Settings() {}
 
   /**
    * All-args constructor.
    */
-  public Model(java.lang.String algorithm, java.lang.String date, java.util.Map<java.lang.String,java.lang.String> params, java.util.Map<java.lang.String,java.lang.String> stats) {
+  public Settings(java.lang.String algorithm, java.lang.String date, java.util.Map<java.lang.String,java.lang.String> params, java.util.Map<java.lang.String,java.lang.String> stats) {
     this.algorithm = algorithm;
     this.date = date;
     this.params = params;
@@ -114,26 +114,26 @@ public class Model extends org.apache.avro.specific.SpecificRecordBase implement
     this.stats = value;
   }
 
-  /** Creates a new Model RecordBuilder */
-  public static org.librairy.service.modeler.facade.model.Model.Builder newBuilder() {
-    return new org.librairy.service.modeler.facade.model.Model.Builder();
+  /** Creates a new Settings RecordBuilder */
+  public static org.librairy.service.modeler.facade.model.Settings.Builder newBuilder() {
+    return new org.librairy.service.modeler.facade.model.Settings.Builder();
   }
   
-  /** Creates a new Model RecordBuilder by copying an existing Builder */
-  public static org.librairy.service.modeler.facade.model.Model.Builder newBuilder(org.librairy.service.modeler.facade.model.Model.Builder other) {
-    return new org.librairy.service.modeler.facade.model.Model.Builder(other);
+  /** Creates a new Settings RecordBuilder by copying an existing Builder */
+  public static org.librairy.service.modeler.facade.model.Settings.Builder newBuilder(org.librairy.service.modeler.facade.model.Settings.Builder other) {
+    return new org.librairy.service.modeler.facade.model.Settings.Builder(other);
   }
   
-  /** Creates a new Model RecordBuilder by copying an existing Model instance */
-  public static org.librairy.service.modeler.facade.model.Model.Builder newBuilder(org.librairy.service.modeler.facade.model.Model other) {
-    return new org.librairy.service.modeler.facade.model.Model.Builder(other);
+  /** Creates a new Settings RecordBuilder by copying an existing Settings instance */
+  public static org.librairy.service.modeler.facade.model.Settings.Builder newBuilder(org.librairy.service.modeler.facade.model.Settings other) {
+    return new org.librairy.service.modeler.facade.model.Settings.Builder(other);
   }
   
   /**
-   * RecordBuilder for Model instances.
+   * RecordBuilder for Settings instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Model>
-    implements org.apache.avro.data.RecordBuilder<Model> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Settings>
+    implements org.apache.avro.data.RecordBuilder<Settings> {
 
     private java.lang.String algorithm;
     private java.lang.String date;
@@ -142,11 +142,11 @@ public class Model extends org.apache.avro.specific.SpecificRecordBase implement
 
     /** Creates a new Builder */
     private Builder() {
-      super(org.librairy.service.modeler.facade.model.Model.SCHEMA$);
+      super(org.librairy.service.modeler.facade.model.Settings.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(org.librairy.service.modeler.facade.model.Model.Builder other) {
+    private Builder(org.librairy.service.modeler.facade.model.Settings.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.algorithm)) {
         this.algorithm = data().deepCopy(fields()[0].schema(), other.algorithm);
@@ -166,9 +166,9 @@ public class Model extends org.apache.avro.specific.SpecificRecordBase implement
       }
     }
     
-    /** Creates a Builder by copying an existing Model instance */
-    private Builder(org.librairy.service.modeler.facade.model.Model other) {
-            super(org.librairy.service.modeler.facade.model.Model.SCHEMA$);
+    /** Creates a Builder by copying an existing Settings instance */
+    private Builder(org.librairy.service.modeler.facade.model.Settings other) {
+            super(org.librairy.service.modeler.facade.model.Settings.SCHEMA$);
       if (isValidValue(fields()[0], other.algorithm)) {
         this.algorithm = data().deepCopy(fields()[0].schema(), other.algorithm);
         fieldSetFlags()[0] = true;
@@ -193,7 +193,7 @@ public class Model extends org.apache.avro.specific.SpecificRecordBase implement
     }
     
     /** Sets the value of the 'algorithm' field */
-    public org.librairy.service.modeler.facade.model.Model.Builder setAlgorithm(java.lang.String value) {
+    public org.librairy.service.modeler.facade.model.Settings.Builder setAlgorithm(java.lang.String value) {
       validate(fields()[0], value);
       this.algorithm = value;
       fieldSetFlags()[0] = true;
@@ -206,7 +206,7 @@ public class Model extends org.apache.avro.specific.SpecificRecordBase implement
     }
     
     /** Clears the value of the 'algorithm' field */
-    public org.librairy.service.modeler.facade.model.Model.Builder clearAlgorithm() {
+    public org.librairy.service.modeler.facade.model.Settings.Builder clearAlgorithm() {
       algorithm = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -218,7 +218,7 @@ public class Model extends org.apache.avro.specific.SpecificRecordBase implement
     }
     
     /** Sets the value of the 'date' field */
-    public org.librairy.service.modeler.facade.model.Model.Builder setDate(java.lang.String value) {
+    public org.librairy.service.modeler.facade.model.Settings.Builder setDate(java.lang.String value) {
       validate(fields()[1], value);
       this.date = value;
       fieldSetFlags()[1] = true;
@@ -231,7 +231,7 @@ public class Model extends org.apache.avro.specific.SpecificRecordBase implement
     }
     
     /** Clears the value of the 'date' field */
-    public org.librairy.service.modeler.facade.model.Model.Builder clearDate() {
+    public org.librairy.service.modeler.facade.model.Settings.Builder clearDate() {
       date = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -243,7 +243,7 @@ public class Model extends org.apache.avro.specific.SpecificRecordBase implement
     }
     
     /** Sets the value of the 'params' field */
-    public org.librairy.service.modeler.facade.model.Model.Builder setParams(java.util.Map<java.lang.String,java.lang.String> value) {
+    public org.librairy.service.modeler.facade.model.Settings.Builder setParams(java.util.Map<java.lang.String,java.lang.String> value) {
       validate(fields()[2], value);
       this.params = value;
       fieldSetFlags()[2] = true;
@@ -256,7 +256,7 @@ public class Model extends org.apache.avro.specific.SpecificRecordBase implement
     }
     
     /** Clears the value of the 'params' field */
-    public org.librairy.service.modeler.facade.model.Model.Builder clearParams() {
+    public org.librairy.service.modeler.facade.model.Settings.Builder clearParams() {
       params = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -268,7 +268,7 @@ public class Model extends org.apache.avro.specific.SpecificRecordBase implement
     }
     
     /** Sets the value of the 'stats' field */
-    public org.librairy.service.modeler.facade.model.Model.Builder setStats(java.util.Map<java.lang.String,java.lang.String> value) {
+    public org.librairy.service.modeler.facade.model.Settings.Builder setStats(java.util.Map<java.lang.String,java.lang.String> value) {
       validate(fields()[3], value);
       this.stats = value;
       fieldSetFlags()[3] = true;
@@ -281,16 +281,16 @@ public class Model extends org.apache.avro.specific.SpecificRecordBase implement
     }
     
     /** Clears the value of the 'stats' field */
-    public org.librairy.service.modeler.facade.model.Model.Builder clearStats() {
+    public org.librairy.service.modeler.facade.model.Settings.Builder clearStats() {
       stats = null;
       fieldSetFlags()[3] = false;
       return this;
     }
 
     @Override
-    public Model build() {
+    public Settings build() {
       try {
-        Model record = new Model();
+        Settings record = new Settings();
         record.algorithm = fieldSetFlags()[0] ? this.algorithm : (java.lang.String) defaultValue(fields()[0]);
         record.date = fieldSetFlags()[1] ? this.date : (java.lang.String) defaultValue(fields()[1]);
         record.params = fieldSetFlags()[2] ? this.params : (java.util.Map<java.lang.String,java.lang.String>) defaultValue(fields()[2]);

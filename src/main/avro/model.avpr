@@ -2,21 +2,32 @@
  "protocol": "ModelerService",
 
  "types": [
-    {"name": "Element", "type": "record", "fields": [
-      {"name":"value","type":"string","default" : ""},
-      {"name":"score","type":"double","default" : 0.0}
-    ]},
-    {"name": "Dimension", "type": "record", "fields": [
-      {"name":"id","type":"int", "default":-1},
-      {"name":"name","type":"string", "default":""},
-      {"name":"description","type":"string", "default":""},
-      {"name":"entropy","type":"double", "default":0.0}
-    ]},
-    {"name": "Relevance", "type": "record", "fields": [
-      {"name":"dimension","type":"Dimension"},
-      {"name":"score","type":"double", "default": 0.0}
-    ]},
-    {"name": "Model", "type": "record", "fields": [
+   {"name": "Similarity", "type": "enum","symbols": ["CONCURRENCE"]},
+   {"name": "Word", "type": "record", "fields": [
+       {"name":"value","type":"string","default" : ""},
+       {"name":"score","type":"double","default" : 0.0}
+     ]},
+     {"name": "Topic", "type": "record", "fields": [
+       {"name":"id","type":"int", "default":-1},
+       {"name":"name","type":"string", "default":""},
+       {"name":"description","type":"string", "default":""},
+       {"name":"entropy","type":"double", "default":0.0}
+     ]},
+     {"name": "TopicSummary", "type": "record", "fields": [
+       {"name":"id","type":"int", "default":-1},
+       {"name":"description","type":"string", "default":""}
+     ]},
+     {"name": "TopicNeighbour", "type": "record", "fields": [
+       {"name":"id","type":"int", "default":-1},
+       {"name":"description","type":"string", "default":""},
+       {"name":"similarity","type":"Similarity", "default":"CONCURRENCE"},
+       {"name":"score","type":"double","default" : 0.0}
+     ]},
+     {"name": "Inference", "type": "record", "fields": [
+       {"name":"vector","type":{"type" : "array","items":"double"}, "default":[]},
+       {"name":"topics","type":{"type" : "array","items":"TopicSummary"}, "default":[]}
+     ]},
+    {"name": "Settings", "type": "record", "fields": [
       {"name":"algorithm","type":"string"},
       {"name":"date","type":"string"},
       {"name":"params","type":{"type" : "map","values":"string"}, "default": {}},
@@ -25,25 +36,29 @@
  ],
 
  "messages": {
-     "inference": {
+     "createInference": {
        "request": [{"name": "text", "type": "string"}],
-       "response": {"type" : "array","items":"Relevance"}
+       "response": "Inference"
      },
-     "shape": {
-       "request": [{"name": "text", "type": "string"}],
-       "response": {"type" : "array","items":"double"}
-     },
-     "dimensions":{
+     "getTopics":{
        "request": [],
-       "response": {"type" : "array","items":"Dimension"}
+       "response": {"type" : "array","items":"TopicSummary"}
      },
-     "elements":{
-       "request": [{"name": "dimensionId", "type": "int"},{"name": "maxElements", "type": "int"},{"name": "offset", "type": "int"},{"name": "tfidf", "type": "boolean", "default": false}],
-       "response": {"type" : "array","items":"Element"}
+     "getTopic":{
+       "request": [{"name": "id", "type": "int"}],
+       "response": "Topic"
      },
-     "model":{
+     "getTopicWords":{
+       "request": [{"name": "id", "type": "int"},{"name": "max", "type": "int"},{"name": "offset", "type": "int"},{"name": "tfidf", "type": "boolean", "default": false}],
+       "response": {"type" : "array","items":"Word"}
+     },
+     "getTopicNeighbours":{
+       "request": [{"name": "id", "type": "int"},{"name": "max", "type": "int"},{"name": "similarity", "type": "Similarity", "default": "CONCURRENCE"}],
+       "response": {"type" : "array","items":"TopicNeighbour"}
+     },
+     "getSettings":{
        "request": [],
-       "response": "Model"
+       "response": "Settings"
      }
  }
 }

@@ -33,43 +33,51 @@ public class AvroClient {
         if (client != null) client.close();
     }
 
-    public List<Relevance> inference(String text) throws AvroRemoteException {
+    public Inference createInference(String text) throws AvroRemoteException {
         // fill in the Message record and send it
-        LOG.debug("Calling proxy.inference");
-        List<Relevance> result = proxy.inference(text);
-        LOG.debug("Result: " + result);
-        return result;
-    }
-
-    public List<Double> shape(String text) throws AvroRemoteException {
-        // fill in the Message record and send it
-        LOG.debug("Calling proxy.shape");
-        List<Double> result = proxy.shape(text);
+        LOG.debug("Calling proxy.createInference");
+        Inference result = proxy.createInference(text);
         LOG.debug("Result: " + result);
         return result;
     }
 
 
-    public List<Dimension> dimensions() throws AvroRemoteException {
+    public List<TopicSummary> getTopics() throws AvroRemoteException {
         // fill in the Message record and send it
-        LOG.debug("Calling proxy.dimensions");
-        List<Dimension> result = proxy.dimensions();
+        LOG.debug("Calling proxy.getTopics");
+        List<TopicSummary> result = proxy.getTopics();
         LOG.debug("Result: " + result);
         return result;
     }
 
-    public List<Element> elements(Integer topicId, Integer maxWords, Integer offset, Boolean tfidf) throws AvroRemoteException {
+    public Topic getTopic(int id) throws AvroRemoteException {
         // fill in the Message record and send it
-        LOG.debug("Calling proxy.elements");
-        List<Element> result = proxy.elements(topicId, maxWords, offset, tfidf);
+        LOG.debug("Calling proxy.getTopic");
+        Topic result = proxy.getTopic(id);
         LOG.debug("Result: " + result);
         return result;
     }
 
-    public Model model() throws AvroRemoteException {
+    public List<Word> getTopicWords(Integer topicId, Integer max, Integer offset, Boolean tfidf) throws AvroRemoteException {
         // fill in the Message record and send it
-        LOG.debug("Calling proxy.details");
-        Model result = proxy.model();
+        LOG.debug("Calling proxy.getTopicWords");
+        List<Word> result = proxy.getTopicWords(topicId, max, offset, tfidf);
+        LOG.debug("Result: " + result);
+        return result;
+    }
+
+    public List<TopicNeighbour> getTopicNeighbours(Integer topicId, Integer max, Similarity similarity) throws AvroRemoteException {
+        // fill in the Message record and send it
+        LOG.debug("Calling proxy.getTopicNeighbours");
+        List<TopicNeighbour> result = proxy.getTopicNeighbours(topicId, max, similarity);
+        LOG.debug("Result: " + result);
+        return result;
+    }
+
+    public Settings getSettings() throws AvroRemoteException {
+        // fill in the Message record and send it
+        LOG.debug("Calling proxy.getSettings");
+        Settings result = proxy.getSettings();
         LOG.debug("Result: " + result);
         return result;
     }

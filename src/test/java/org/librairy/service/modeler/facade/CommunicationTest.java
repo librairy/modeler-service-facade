@@ -19,29 +19,35 @@ public class CommunicationTest {
 
         ModelerService customService = new ModelerService() {
 
+
             @Override
-            public List<Relevance> inference(String text) throws AvroRemoteException {
+            public Inference createInference(String text) throws AvroRemoteException {
+                return Inference.newBuilder().build();
+            }
+
+            @Override
+            public List<TopicSummary> getTopics() throws AvroRemoteException {
                 return Collections.emptyList();
             }
 
             @Override
-            public List<Double> shape(String text) throws AvroRemoteException {
+            public Topic getTopic(int id) throws AvroRemoteException {
+                return Topic.newBuilder().build();
+            }
+
+            @Override
+            public List<Word> getTopicWords(int id, int max, int offset, boolean tfidf) throws AvroRemoteException {
                 return Collections.emptyList();
             }
 
             @Override
-            public List<Dimension> dimensions() throws AvroRemoteException {
+            public List<TopicNeighbour> getTopicNeighbours(int id, int max, Similarity similarity) throws AvroRemoteException {
                 return Collections.emptyList();
             }
 
             @Override
-            public List<Element> elements(int dimensionId, int maxElements, int offset, boolean tfidf) throws AvroRemoteException {
-                return Collections.emptyList();
-            }
-
-            @Override
-            public Model model() throws AvroRemoteException {
-                return Model.newBuilder().build();
+            public Settings getSettings() throws AvroRemoteException {
+                return Settings.newBuilder().build();
             }
         };
         AvroServer server = new AvroServer(customService);
@@ -57,13 +63,17 @@ public class CommunicationTest {
 
         try {
 
-            client.inference("sample text");
+            client.createInference("sample text");
 
-            client.dimensions();
+            client.getTopics();
 
-            client.elements(0,5,0,false);
+            client.getTopic(0);
 
-            client.model();
+            client.getTopicWords(0,5,0,false);
+
+            client.getTopicNeighbours(0,5,Similarity.CONCURRENCE);
+
+            client.getSettings();
 
         } catch (AvroRemoteException e) {
             e.printStackTrace();
