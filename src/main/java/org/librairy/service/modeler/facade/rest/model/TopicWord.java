@@ -12,9 +12,9 @@ import java.lang.reflect.InvocationTargetException;
  * @author Badenes Olmedo, Carlos <cbadenes@fi.upm.es>
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Word extends org.librairy.service.modeler.facade.model.Word {
+public class TopicWord extends org.librairy.service.modeler.facade.model.TopicWord {
 
-    public Word(org.librairy.service.modeler.facade.model.Word word){
+    public TopicWord(org.librairy.service.modeler.facade.model.TopicWord word){
         try {
             BeanUtils.copyProperties(this,word);
         } catch (IllegalAccessException e) {
@@ -24,7 +24,7 @@ public class Word extends org.librairy.service.modeler.facade.model.Word {
         }
     }
 
-    public Word() {
+    public TopicWord() {
     }
 
     @Override

@@ -3,7 +3,7 @@
 
  "types": [
    {"name": "Similarity", "type": "enum","symbols": ["CONCURRENCE"]},
-   {"name": "Word", "type": "record", "fields": [
+   {"name": "TopicWord", "type": "record", "fields": [
        {"name":"value","type":"string","default" : ""},
        {"name":"score","type":"double","default" : 0.0}
      ]},
@@ -50,7 +50,7 @@
      },
      "getTopicWords":{
        "request": [{"name": "id", "type": "int"},{"name": "max", "type": "int"},{"name": "offset", "type": "int"},{"name": "tfidf", "type": "boolean", "default": false}],
-       "response": {"type" : "array","items":"Word"}
+       "response": {"type" : "array","items":"TopicWord"}
      },
      "getTopicNeighbours":{
        "request": [{"name": "id", "type": "int"},{"name": "max", "type": "int"},{"name": "similarity", "type": "Similarity", "default": "CONCURRENCE"}],

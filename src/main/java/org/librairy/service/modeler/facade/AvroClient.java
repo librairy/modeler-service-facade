@@ -58,10 +58,10 @@ public class AvroClient {
         return result;
     }
 
-    public List<Word> getTopicWords(Integer topicId, Integer max, Integer offset, Boolean tfidf) throws AvroRemoteException {
+    public List<TopicWord> getTopicWords(Integer topicId, Integer max, Integer offset, Boolean tfidf) throws AvroRemoteException {
         // fill in the Message record and send it
         LOG.debug("Calling proxy.getTopicWords");
-        List<Word> result = proxy.getTopicWords(topicId, max, offset, tfidf);
+        List<TopicWord> result = proxy.getTopicWords(topicId, max, offset, tfidf);
         LOG.debug("Result: " + result);
         return result;
     }

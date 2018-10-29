@@ -36,7 +36,7 @@ public class CommunicationTest {
             }
 
             @Override
-            public List<Word> getTopicWords(int id, int max, int offset, boolean tfidf) throws AvroRemoteException {
+            public List<TopicWord> getTopicWords(int id, int max, int offset, boolean tfidf) throws AvroRemoteException {
                 return Collections.emptyList();
             }
 
