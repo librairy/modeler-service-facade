@@ -25,6 +25,11 @@ public class CommunicationTest {
             }
 
             @Override
+            public List<TopicSummary> assignClasses(String text) throws AvroRemoteException {
+                return Collections.emptyList();
+            }
+
+            @Override
             public List<TopicSummary> getTopics() throws AvroRemoteException {
                 return Collections.emptyList();
             }

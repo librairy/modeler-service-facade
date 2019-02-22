@@ -20,13 +20,6 @@ public class Inference  {
 
 
     public Inference(org.librairy.service.modeler.facade.model.Inference inference){
-//        try {
-//            BeanUtils.copyProperties(this,inference);
-//        } catch (IllegalAccessException e) {
-//            throw new RuntimeException(e);
-//        } catch (InvocationTargetException e) {
-//            throw new RuntimeException(e);
-//        }
 
         this.vector = inference.getVector();
         if ((inference.getTopics() != null) && (!inference.getTopics().isEmpty()))

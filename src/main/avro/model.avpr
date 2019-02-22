@@ -41,6 +41,10 @@
        "request": [{"name": "text", "type": "string"},{"name": "topics", "type": "boolean", "default": false}],
        "response": "Inference"
      },
+     "assignClasses": {
+       "request": [{"name": "text", "type": "string"}],
+       "response":  {"type" : "array","items":"TopicSummary"}
+     },
      "getTopics":{
        "request": [],
        "response": {"type" : "array","items":"TopicSummary"}
