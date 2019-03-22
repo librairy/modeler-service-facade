@@ -1,4 +1,4 @@
-{"namespace": "org.librairy.service.modeler.facade.model",
+{"namespace": "es.upm.oeg.librairy.service.modeler.facade.model",
  "protocol": "ModelerService",
 
  "types": [
